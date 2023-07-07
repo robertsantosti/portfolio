@@ -1,9 +1,17 @@
+import { Layout } from "./layouts/Layout.component"
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { ErrorPage } from "./pages/Error/Error.page"
 const App = () => {
 
   return (
-    <>
-      <p>App is Render</p>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Layout/>}>
+          <Route index element={<ErrorPage/>}/>
+          <Route path="*" element={<ErrorPage/>}/>
+        </Route>
+      </Routes>
+    </Router>
   )
 }
 
