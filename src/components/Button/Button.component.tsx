@@ -1,4 +1,4 @@
-import React, { MouseEvent } from 'react';
+import React from 'react';
 
 import { IButton } from '../../utils/interfaces/button';
 import { Button } from './Buttton.style';
