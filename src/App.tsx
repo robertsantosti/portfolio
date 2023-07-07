@@ -1,8 +1,14 @@
+import { HeaderComponent } from './components/Header/Header.component';
+
 const App = () => {
 
   return (
     <>
-      <p>App is Render</p>
+      <HeaderComponent/>
+
+      <main>
+        <p>App is Render</p>
+      </main>
     </>
   )
 }
