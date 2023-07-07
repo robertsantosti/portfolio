@@ -5,10 +5,12 @@ import SearchImage from '../../assets/images/search_image.svg';
 
 import { ErrorContext } from '../../contexts/Error/Error.context';
 import * as Styled from './Error.style';
+import { ButtonComponent } from '../../components/Button/Button.component';
 
 
 export const ErrorPage = () => {
   const { error } = useContext(ErrorContext);
+  const buttonLabel = 'Voltar para página principal';
 
   const renderImage = (code?: string) => {
     return code === '404'
@@ -24,7 +26,8 @@ export const ErrorPage = () => {
       <Styled.InfoWrapper className="info-wrapper">
         <Styled.Title>{ error?.title }</Styled.Title>
         <Styled.Description>{ error?.description }</Styled.Description>
-        <button>Voltar para página principal</button>
+
+        <ButtonComponent>{ buttonLabel }</ButtonComponent>
       </Styled.InfoWrapper>
     </Styled.WorkingPageWrapper>
   )
