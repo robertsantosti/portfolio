@@ -28,5 +28,9 @@ export const GlobalStyle = createGlobalStyle`
     width: 100%;
     display: flex;
     flex-direction: column;
+
+    main {
+      height: 100%;
+    }
   }
 `

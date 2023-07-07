@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 
 import { HeaderComponent } from './Header.component'
 
-describe('HeaderComponents Tests', () => {
+describe('HeaderComponent Tests', () => {
   beforeEach(() => {
     render(<HeaderComponent/>)
   })

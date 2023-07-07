@@ -1,3 +1,4 @@
+import { FooterComponent } from './components/Footer/Footer.component';
 import { HeaderComponent } from './components/Header/Header.component';
 
 const App = () => {
@@ -9,6 +10,8 @@ const App = () => {
       <main>
         <p>App is Render</p>
       </main>
+
+      <FooterComponent/>
     </>
   )
 }
