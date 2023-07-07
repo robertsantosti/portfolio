@@ -1,17 +1,10 @@
-import { FooterComponent } from './components/Footer/Footer.component';
-import { HeaderComponent } from './components/Header/Header.component';
+import { Layout } from "./layouts/Layout.component"
 
 const App = () => {
 
   return (
     <>
-      <HeaderComponent/>
-
-      <main>
-        <p>App is Render</p>
-      </main>
-
-      <FooterComponent/>
+      <Layout/>
     </>
   )
 }
