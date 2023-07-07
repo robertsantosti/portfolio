@@ -8,6 +8,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Layout/>}>
           <Route index element={<ErrorPage/>}/>
+          <Route path="*" element={<ErrorPage/>}/>
         </Route>
       </Routes>
     </Router>
