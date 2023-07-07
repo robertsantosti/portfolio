@@ -1,3 +1,4 @@
+import { MenuComponent } from "../Menu/Menu.component";
 import { Header, Logo } from "./Header.style";
 
 export const HeaderComponent = () => {
@@ -8,6 +9,8 @@ export const HeaderComponent = () => {
         <span className="detail">Santos</span>
         <span>Ti</span>
       </Logo>
+
+      <MenuComponent/>
     </Header>
   ); 
 }
