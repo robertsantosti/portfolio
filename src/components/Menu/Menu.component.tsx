@@ -1,8 +1,9 @@
+import * as Styled from './Menu.style';
 
 export const MenuComponent = () => {
   return(
-    <>
-      <p>MenuComponent is render</p>
-    </>
+    <Styled.Menu data-testid="menu">
+      
+    </Styled.Menu>
   )
 }
