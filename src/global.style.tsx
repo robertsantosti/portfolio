@@ -19,7 +19,9 @@ export const GlobalStyle = createGlobalStyle`
     justify-content: center;
     width: 100vw;
     height: 100vh;
-    background-color: ${COLORS.$primary};
+    background-image: url('images/app-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     color: ${COLORS.$white};
   }
 
@@ -31,6 +33,12 @@ export const GlobalStyle = createGlobalStyle`
 
     main {
       height: 100%;
+
+      display: flex;
+      place-content: center;
+      place-items: center;
+
+      padding: 2rem;
     }
   }
 `
