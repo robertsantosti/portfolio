@@ -1,5 +1,7 @@
-import { FooterComponent } from "../components/Footer/Footer.component"
-import { HeaderComponent } from "../components/Header/Header.component"
+import { Outlet } from 'react-router-dom';
+
+import { FooterComponent } from '../components/Footer/Footer.component';
+import { HeaderComponent } from '../components/Header/Header.component';
 
 export const Layout = () => {
   return(
@@ -7,7 +9,7 @@ export const Layout = () => {
       <HeaderComponent/>
 
       <main>
-        <p>App is Render</p>
+        <Outlet/>
       </main>
 
       <FooterComponent/>
