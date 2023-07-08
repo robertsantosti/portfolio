@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 
 import WorkingImage from '../../assets/images/working_image.svg';
 import SearchImage from '../../assets/images/search_image.svg';
@@ -7,12 +7,24 @@ import { ErrorContext } from '../../contexts/Error/Error.context';
 import * as Styled from './Error.style';
 import { ButtonComponent } from '../../components/Button/Button.component';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { IErrorPageProps } from '../../interfaces/Error.interface';
 
-
-export const ErrorPage = () => {
+export const ErrorPage = ({ isMaintence }: IErrorPageProps) => {
   const { error } = useContext(ErrorContext);
   const navigate = useNavigate();
   const path = useLocation();
+
+  const { setError } = useContext(ErrorContext)
+
+  useEffect(() => {
+    if(isMaintence) {
+      setError({
+        title: 'Vem novidade por ai!',
+        description: 'Ainda estamos trabalhando nessa página.',
+        code:'working',
+      })
+    }
+  }, [])
 
   const buttonLabel = 'Voltar para página principal';
 
@@ -30,7 +42,7 @@ export const ErrorPage = () => {
   }
 
   return(
-    <Styled.WorkingPageWrapper>
+    <Styled.WorkingPageWrapper data-testid="error-wrapper-testId">
       <div>
         { renderImage(error?.code) }
       </div>

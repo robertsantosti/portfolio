@@ -6,15 +6,16 @@ import { ContactPage } from "./pages/Contact/Contact.page"
 import { ProjectsPage } from "./pages/Projects/Projects.page"
 import { CarrerPage } from "./pages/Carrer/Carrer.page"
 const App = () => {
+  const isMaintence = true;
 
   return (
-    <Router>
+    <Router basename="/">
       <Routes>
         <Route path="/" element={<Layout/>}>
-          <Route index element={<HomePage/>}/>
-          <Route path="/contact" element={<ContactPage/>}/>
-          <Route path="/projects" element={<ProjectsPage/>}/>
-          <Route path="/carrer" element={<CarrerPage/>}/>
+          <Route index element={ isMaintence ? <ErrorPage isMaintence={true}/> : <HomePage/>}/>
+          <Route path="/contact" element={ isMaintence ? <ErrorPage isMaintence={true}/> : <ContactPage/>}/>
+          <Route path="/projects" element={ isMaintence ? <ErrorPage isMaintence={true}/> : <ProjectsPage/>}/>
+          <Route path="/carrer" element={ isMaintence ? <ErrorPage isMaintence={true}/> : <CarrerPage/>}/>
           <Route path="*" element={<ErrorPage/>}/>
         </Route>
       </Routes>

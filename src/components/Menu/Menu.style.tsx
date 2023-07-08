@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { COLORS } from "../../utils/styles/style";
+import { Link } from "react-router-dom";
 
 export const Menu = styled.nav`
   display: flex;
@@ -9,7 +10,9 @@ export const Menu = styled.nav`
   text-transform: uppercase;
 `
 
-export const MenuItem = styled.a<{ $active?: boolean }>`
-  border-bottom: ${({ $active }) => $active ? `2px solid ${COLORS.$white}` : 0};
+export const MenuItem = styled(Link)<{ $active?: boolean }>`
   cursor: pointer;
+  color: ${ COLORS.$white };
+  border-bottom: ${({ $active }) => $active ? `2px solid ${COLORS.$white}` : 0};
+  text-decoration: none;
 `
