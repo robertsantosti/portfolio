@@ -10,15 +10,15 @@ describe('FooterComponent Tests', () => {
   })
 
   it('Shoud be able to render FooterComponent', () => {
-    expect(screen.getByTestId('footer'));
+    expect(screen.getByTestId('footer')).toBeInTheDocument();
   })
 
   it('Shoud be able to render LinkedIn Link', () => {
-    expect(screen.getByTestId('linkedin-link'));
+    expect(screen.getByTestId('linkedin-link')).toBeInTheDocument();
   })
 
   it('Shoud be able to render GitHub Link', () => {
-    expect(screen.getByTestId('github-link'));
+    expect(screen.getByTestId('github-link')).toBeInTheDocument();
   })
 
   it('Shoud redirect to LinkedIn page', () => {
