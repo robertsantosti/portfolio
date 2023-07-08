@@ -13,7 +13,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Layout/>}>
           <Route index element={ isMaintence ? <ErrorPage isMaintence={true}/> : <HomePage/>}/>
-          <Route path="/contact" element={ isMaintence ? <ErrorPage isMaintence={true}/> : <ContactPage/>}/>
+          <Route path="/contact" element={ <ContactPage errorPage={!isMaintence && <ErrorPage isMaintence={true}/> }/>}/>
           <Route path="/projects" element={ isMaintence ? <ErrorPage isMaintence={true}/> : <ProjectsPage/>}/>
           <Route path="/carrer" element={ isMaintence ? <ErrorPage isMaintence={true}/> : <CarrerPage/>}/>
           <Route path="*" element={<ErrorPage/>}/>
