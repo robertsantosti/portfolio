@@ -7,6 +7,7 @@ import { SocialLinksComponent } from '../../components/SocialLinks/SocialLinks.c
 import { SOCIAL_LINKS } from '../../utils/const/social-links';
 import { IPageProps } from '../../utils/interfaces/pages';
 import * as Styled from './Contact.style';
+import { FormContactComponent } from '../../components/Form/Contact/FormContact.component';
 
 export const ContactPage = ({ errorPage }: IPageProps) => {
   const saveFile = () => {
@@ -30,6 +31,10 @@ export const ContactPage = ({ errorPage }: IPageProps) => {
             <span>Download CV</span>
           </ButtonComponent>
         </Styled.ContainerWrapper>
+
+        <Styled.FormContactWrapper>
+          <FormContactComponent />
+        </Styled.FormContactWrapper>
       </Styled.ContactPageWrapper>
     )
   }

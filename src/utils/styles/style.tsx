@@ -5,6 +5,7 @@ export const COLORS = {
   $black: '#000000',
   $white: '#FFFFFF',
   $softGray: '#AAAAAA',
+  $danger: '#BE2E2E',
 }
 
 export const FONT_WEIGHT = {

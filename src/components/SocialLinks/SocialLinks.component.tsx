@@ -11,7 +11,7 @@ export const SocialLinksComponent = ({ links, size }: ISocialLinkProps) => {
   }
 
   return(
-    <Styled.SocialWrapper data-testId="social-wrapper-testId">
+    <Styled.SocialWrapper data-testid="social-wrapper-testId">
       { links?.map(link => renderLink(link)) }
     </Styled.SocialWrapper>
   )

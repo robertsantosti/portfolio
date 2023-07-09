@@ -14,7 +14,8 @@ export const ContainerWrapper = styled.div`
   display: flex;
   flex: 1 0 0;
   flex-direction: column;
-  align-items: center;
+  place-items: center;
+  place-content: center;
   gap: 2rem;
 `
 
@@ -34,4 +35,13 @@ export const SubTitle = styled.p`
   font-size: 1rem;
   font-weight: 700;
   line-height: normal;
+`
+
+export const FormContactWrapper = styled.div`
+  display: flex;
+  padding: 0.625rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.625rem;
+  flex: 1 0 0;
 `
