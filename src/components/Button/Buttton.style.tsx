@@ -32,4 +32,9 @@ export const Button = styled.button`
     width: 1.5rem;
     height: 1.5rem;
   }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
 `
