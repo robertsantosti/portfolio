@@ -1,4 +1,14 @@
 
+export const getColor = (color: string) => {
+  switch(color) {
+    case 'primary': return COLORS.$primary;
+    case 'secondary': return COLORS.$secondary;
+    case 'dark': return COLORS.$black;
+    case 'danger': return COLORS.$danger;
+    default: return COLORS.$white;
+  }
+}
+
 export const COLORS = {
   $primary: '#0F031C',
   $secondary: '#477FD2',

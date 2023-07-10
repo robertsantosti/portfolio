@@ -27,19 +27,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   #root {
-    max-width: 1280px;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-
-    main {
-      height: 100%;
-
-      display: flex;
-      place-content: center;
-      place-items: center;
-
-      padding: 2rem;
-    }
+    height: 100%;
   }
 `

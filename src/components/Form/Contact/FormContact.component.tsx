@@ -1,24 +1,37 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
+import { AlertModalContext } from '../../../contexts/Modal/AlertModal/AlertModal.context';
 import { IFormContact } from '../../../interfaces/Form/contact';
 import { InputComponent } from '../../Input/Input.component';
 import * as Styled from './FormContact..style';
 
+const ModalContent = () => {
+  return <p>Deseja realmente realizar essa ação?</p>;
+}
+
 
 export const FormContactComponent = () => {
   const [loading, setLoading] = useState(false);
+  const { showAlertModal, setShowAlertModal, setDataAlertModal } = useContext(AlertModalContext);
   
   const { register, watch, handleSubmit, reset, formState: { errors } } = useForm<IFormContact>();
+
   const onSubmit: SubmitHandler<IFormContact> = (data) => {
-    setLoading(true);
-    
-    setTimeout(() => {
-      alert(`${data.name}, e-mail enviado com sucesso`);
-      reset();
-      setLoading(false)
-    }, 2000)
+    setDataAlertModal({
+      title: 'Atenção',
+      content: <ModalContent/>,
+      cancelButton: {
+        show: true,
+        label: 'Fechar',
+      },
+      successButton: {
+        show: true,
+        label: 'Confirmar',
+      },
+    });
+    setShowAlertModal(true);
   }
 
   return(
@@ -56,7 +69,7 @@ export const FormContactComponent = () => {
       />
       
       <Styled.FormButton
-        isLoading={loading}
+        isLoading={loading || showAlertModal}
         disabled={!!errors.message || !!errors.email || !!errors.name }
       >
         Enviar

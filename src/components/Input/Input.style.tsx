@@ -1,15 +1,5 @@
 import styled from "styled-components";
-import { COLORS } from "../../utils/styles/style";
-
-const getColor = (color: string) => {
-  switch(color) {
-    case 'primary': return COLORS.$primary;
-    case 'secondary': return COLORS.$secondary;
-    case 'dark': return COLORS.$black;
-    case 'danger': return COLORS.$danger;
-    default: return COLORS.$white;
-  }
-}
+import { getColor } from "../../utils/styles/style";
 
 export const InputGroup = styled.div`
   display: flex;
