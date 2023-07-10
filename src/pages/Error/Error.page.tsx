@@ -46,13 +46,11 @@ export const ErrorPage = ({ isMaintence }: IErrorPageProps) => {
       <div>
         { renderImage(error?.code) }
       </div>
-      <Styled.InfoWrapper className="info-wrapper">
+      <Styled.InfoWrapper>
         <Styled.Title>{ error?.title }</Styled.Title>
         <Styled.Description>{ error?.description }</Styled.Description>
 
-        {
-          path.pathname !== '/' && <ButtonComponent onClick={redirectToHome}>{ buttonLabel }</ButtonComponent>
-        }
+        { path.pathname !== '/' && <ButtonComponent onClick={redirectToHome}>{ buttonLabel }</ButtonComponent> }
       </Styled.InfoWrapper>
     </Styled.WorkingPageWrapper>
   )

@@ -1,26 +1,7 @@
 import { createContext, useState } from 'react';
 import { IChildren } from '../../../utils/interfaces/context';
 import { AlertModalComponent } from '../../../components/Modal/AlertModal/AlertModal.component';
-
-interface IAlertModal {
-  title: string;
-  content: any;
-  cancelButton?: {
-    show: boolean,
-    label: string,
-  },
-  successButton?: {
-    show: boolean,
-    label: string,
-  }
-}
-
-interface IAlertModalContext {
-  dataAlertModal: IAlertModal;
-  showAlertModal: boolean;
-  setShowAlertModal: React.Dispatch<React.SetStateAction<boolean>>;
-  setDataAlertModal: React.Dispatch<React.SetStateAction<IAlertModal>>;
-}
+import { IAlertModal, IAlertModalContext } from '../../../interfaces/AletaModal.interface';
 
 export const AlertModalContext = createContext<IAlertModalContext>({
   dataAlertModal: {
