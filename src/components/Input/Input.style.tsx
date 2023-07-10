@@ -54,10 +54,30 @@ export const InfoWrapper = styled.div`
   width: 100%;
 `
 
+export const MessageWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  width: 100%;
+`
+
 export const Error = styled.p`
   font-size: .6rem;
   color: ${getColor('danger')};
   width: 100%;
-`
+  `
 
-export const Infos = styled.div``
+export const LengthWrapper = styled.p<{$color: string}>`
+  font-size: .75rem;
+  color: ${({$color}) => { return getColor($color) }};
+  width: 100%;
+  text-align: right;
+  `
+
+export const Info = styled.p<{$color: string}>`
+  display: flex;
+  align-items: center;
+  gap: .1rem;
+  font-size: .6rem;
+  color: ${({$color}) => { return getColor($color) }};
+`

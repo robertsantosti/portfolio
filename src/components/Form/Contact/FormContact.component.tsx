@@ -10,7 +10,7 @@ import * as Styled from './FormContact..style';
 export const FormContactComponent = () => {
   const [loading, setLoading] = useState(false);
   
-  const { register, handleSubmit, reset, formState: { errors } } = useForm<IFormContact>();
+  const { register, watch, handleSubmit, reset, formState: { errors } } = useForm<IFormContact>();
   const onSubmit: SubmitHandler<IFormContact> = (data) => {
     setLoading(true);
     
@@ -51,6 +51,7 @@ export const FormContactComponent = () => {
         placeholder='Digita sua mensagem...'
         length={{max: 500}}
         error={ errors.message }
+        watch={watch('message')}
         register={{...register('message', {required: true, maxLength: 500})}}
       />
       

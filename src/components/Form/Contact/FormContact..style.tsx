@@ -30,6 +30,16 @@ export const FormButton = styled(ButtonComponent)<{isLoading: boolean}>`
     color: ${COLORS.$white};
     border: 1px solid ${COLORS.$white};
   }
+
+  &:disabled {
+    color: ${COLORS.$danger};
+    border-color: ${COLORS.$danger};
+
+    &:hover {
+      background-color: ${COLORS.$danger};
+      color: ${COLORS.$white};
+    }
+  }
 `
 
 export const InputGroup = styled.div<{$hasError?: boolean}>`

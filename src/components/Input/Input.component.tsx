@@ -1,27 +1,9 @@
-import { FieldError, UseFormRegisterReturn } from 'react-hook-form';
+import { IInputProps } from '../../interfaces/Input.interface';
 import { EnumFormError } from '../../utils/enums/from/error';
 import * as Styled from './Input.style';
-import { useState } from 'react';
 
-interface IInput {
-  label: string,
-  title: string,
-  type?: 'text' | 'number' | 'email' | 'textarea',
-  error?: FieldError,
-  info?: string,
-  color?: string,
-  placeholder?: string,
-  register?: UseFormRegisterReturn,
-  length?: {
-    min?: number;
-    max?: number;
-  }
-}
-
-export const InputComponent = ({ label, title, type, error, info, color, register, placeholder, length }: IInput) => {
+export const InputComponent = ({ label, title, type, error, info, color, register, placeholder, watch, length }: IInputProps) => {
   const FORM_ERROR = EnumFormError;
-
-  const [messageLength, setMessageLength] = useState(0);
 
   return(
     <Styled.InputGroup>
@@ -54,19 +36,26 @@ export const InputComponent = ({ label, title, type, error, info, color, registe
 
       <Styled.InfoWrapper>
         <>
-          { error &&
-              <Styled.Error>
-              {error.type === 'required' && FORM_ERROR.REQUIRED}
-              {error.type === 'maxLength' && FORM_ERROR.MAX_LENGTH.replace('LENGTH', length?.max?.toString() || '0')}
-              {error.type === 'minLength' && FORM_ERROR.MIN_LENGTH.replace('LENGTH', length?.min?.toString() || '0')}
-              {(error.type === 'matchPath' && type === 'email') && FORM_ERROR.EMAIL}
-              </Styled.Error>
-          }
+          <Styled.MessageWrapper>
+            { info &&
+              <Styled.Info $color={ color || '' }>
+                { info }
+              </Styled.Info>
+            }
+            { error &&
+                <Styled.Error>
+                {error.type === 'required' && FORM_ERROR.REQUIRED}
+                {error.type === 'maxLength' && FORM_ERROR.MAX_LENGTH.replace('LENGTH', length?.max?.toString() || '0')}
+                {error.type === 'minLength' && FORM_ERROR.MIN_LENGTH.replace('LENGTH', length?.min?.toString() || '0')}
+                {(error.type === 'matchPath' && type === 'email') && FORM_ERROR.EMAIL}
+                </Styled.Error>
+            }
+          </Styled.MessageWrapper>
 
-          { info &&
-            <Styled.Infos>
-              <p>Infos</p>
-            </Styled.Infos>
+          { type === 'textarea' && 
+              <Styled.LengthWrapper  $color={error ? 'danger' : 'primary'}>
+                <strong>{ watch?.length || 0 }</strong> de <strong>{length?.max}</strong> caracteres.
+              </Styled.LengthWrapper>
           }
         </>
       </Styled.InfoWrapper>
