@@ -3,12 +3,11 @@ import { MdCloudDownload } from 'react-icons/md';
 
 import CvFile from '../../assets/pdf/curriculo.pdf';
 import { ButtonComponent } from '../../components/Button/Button.component';
+import { FormContactComponent } from '../../components/Form/Contact/FormContact.component';
 import { SocialLinksComponent } from '../../components/SocialLinks/SocialLinks.component';
 import { SOCIAL_LINKS } from '../../utils/const/social-links';
 import { IPageProps } from '../../utils/interfaces/pages';
 import * as Styled from './Contact.style';
-import { FormContactComponent } from '../../components/Form/Contact/FormContact.component';
-import { InputComponent } from '../../components/Input/Input.component';
 
 export const ContactPage = ({ errorPage }: IPageProps) => {
   const saveFile = () => {
