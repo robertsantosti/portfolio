@@ -1,10 +1,12 @@
 import { useContext } from 'react';
 
 import { AlertModalContext } from '../../../contexts/Modal/AlertModal/AlertModal.context';
+import { NotificationContext } from '../../../contexts/Notification/Notification.context';
 import * as Styled from './AlertModal.style';
 
 export const AlertModalComponent = () => {
   const { dataAlertModal, showAlertModal, setShowAlertModal } = useContext(AlertModalContext);
+  const { setNotification, setShowNotification } = useContext(NotificationContext);
 
   const close = () => {
     setShowAlertModal(false);
@@ -15,6 +17,19 @@ export const AlertModalComponent = () => {
  
     if(action) {
       action.reset();
+
+      setNotification({
+        message: action.dispatch,
+        hasIcon: true,
+        type: 'success',
+      });
+
+      setShowNotification(true);
+
+      setTimeout(() => {
+        setShowNotification(false);
+        setNotification({message: ''});
+      }, 4000)
     }
 
     setShowAlertModal(false);

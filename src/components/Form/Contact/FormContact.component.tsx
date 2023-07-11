@@ -7,11 +7,6 @@ import { IFormContact } from '../../../interfaces/Form/contact';
 import { InputComponent } from '../../Input/Input.component';
 import * as Styled from './FormContact..style';
 
-const ModalContent = () => {
-  return <p>Deseja realmente realizar essa ação?</p>;
-}
-
-
 export const FormContactComponent = () => {
   const { showAlertModal, setShowAlertModal, setDataAlertModal } = useContext(AlertModalContext);
   
@@ -20,7 +15,7 @@ export const FormContactComponent = () => {
   const onSubmit: SubmitHandler<IFormContact> = (data) => {
     setDataAlertModal({
       title: 'Atenção',
-      content: <ModalContent/>,
+      content: (<p>Deseja realmente realizar essa ação?</p>),
       cancelButton: {
         show: true,
         label: 'Fechar',

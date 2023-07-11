@@ -2,18 +2,24 @@ import { Outlet } from 'react-router-dom';
 
 import { FooterComponent } from '../components/Footer/Footer.component';
 import { HeaderComponent } from '../components/Header/Header.component';
+import { AlertModalProvider } from '../contexts/Modal/AlertModal/AlertModal.context';
+import { NotificationProvider } from '../contexts/Notification/Notification.context';
 import * as Styled from './Layout.style';
 
 export const Layout = () => {
   return(
     <Styled.Layout>
-        <HeaderComponent/>
+      <NotificationProvider>
+        <AlertModalProvider>
+          <HeaderComponent/>
 
-        <main>
-            <Outlet/>
-        </main>
+          <main>
+              <Outlet/>
+          </main>
 
-        <FooterComponent/>
+          <FooterComponent/>
+        </AlertModalProvider>
+      </NotificationProvider>
     </Styled.Layout>
   )
 }

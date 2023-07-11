@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { COLORS } from '../../utils/styles/style';
 
 const getBackgoundColor = (color: string) => {
@@ -10,7 +11,7 @@ const getBackgoundColor = (color: string) => {
     case 'light': return COLORS.$white;
     case 'dark': return COLORS.$black;
     case 'error': return COLORS.$danger;
-    default: return '#EFEFEF';
+    default: return '#AAA';
   }
 }
 
@@ -36,7 +37,7 @@ export const Notification = styled.div<{$color: string}>`
   box-shadow: 5px 5px 10px #FFF9;
 
   animation-name: slidein;
-  animation-duration: .5s;
+  animation-duration: 1s;
 
   @keyframes slidein {
     from {
