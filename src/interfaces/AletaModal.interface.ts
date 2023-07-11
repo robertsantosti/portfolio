@@ -1,5 +1,6 @@
 export interface IAlertModal {
   title: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   content: any;
   cancelButton?: {
     show: boolean,
@@ -8,7 +9,11 @@ export interface IAlertModal {
   successButton?: {
     show: boolean,
     label: string,
-  }
+  },
+  action?: {
+    reset: () => void,
+    dispatch: () => void,
+  },
 }
 
 export interface IAlertModalContext {

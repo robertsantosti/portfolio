@@ -11,6 +11,13 @@ export const AlertModalComponent = () => {
   }
   
   const submit = () => {
+    const { action } = dataAlertModal;
+ 
+    if(action) {
+      action.reset();
+      action.dispatch();
+    }
+
     setShowAlertModal(false);
   }
 

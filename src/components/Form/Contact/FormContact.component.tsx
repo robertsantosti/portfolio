@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
 import { AlertModalContext } from '../../../contexts/Modal/AlertModal/AlertModal.context';
@@ -13,7 +13,6 @@ const ModalContent = () => {
 
 
 export const FormContactComponent = () => {
-  const [loading, setLoading] = useState(false);
   const { showAlertModal, setShowAlertModal, setDataAlertModal } = useContext(AlertModalContext);
   
   const { register, watch, handleSubmit, reset, formState: { errors } } = useForm<IFormContact>();
@@ -30,6 +29,10 @@ export const FormContactComponent = () => {
         show: true,
         label: 'Confirmar',
       },
+      action: {
+        reset,
+        dispatch: () => {alert(`${data.name}, e-mail enviado com sucesso.`)},
+      }
     });
     setShowAlertModal(true);
   }
@@ -69,7 +72,7 @@ export const FormContactComponent = () => {
       />
       
       <Styled.FormButton
-        isLoading={loading || showAlertModal}
+        isLoading={ showAlertModal }
         disabled={!!errors.message || !!errors.email || !!errors.name }
       >
         Enviar
