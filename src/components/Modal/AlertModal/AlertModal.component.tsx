@@ -15,7 +15,6 @@ export const AlertModalComponent = () => {
  
     if(action) {
       action.reset();
-      action.dispatch();
     }
 
     setShowAlertModal(false);
@@ -37,15 +36,17 @@ export const AlertModalComponent = () => {
     return footer;
   }
 
-  return( 
-    <Styled.ModalWrapper
-      closeIcon={null}
-      closable={false}
-      title={ dataAlertModal.title }
-      open={ showAlertModal }
-      footer={getFooter()}
-    >
-      { dataAlertModal.content }
-    </Styled.ModalWrapper>
+  return(
+    <>
+      <Styled.ModalWrapper
+        closeIcon={null}
+        closable={false}
+        title={ dataAlertModal.title }
+        open={ showAlertModal }
+        footer={getFooter()}
+      >
+        { dataAlertModal.content }
+      </Styled.ModalWrapper>
+    </>
   )
 };

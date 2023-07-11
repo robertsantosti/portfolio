@@ -31,7 +31,7 @@ export const FormContactComponent = () => {
       },
       action: {
         reset,
-        dispatch: () => {alert(`${data.name}, e-mail enviado com sucesso.`)},
+        dispatch: `${data.name} email enviado com sucesso`,
       }
     });
     setShowAlertModal(true);

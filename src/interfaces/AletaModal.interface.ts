@@ -12,7 +12,7 @@ export interface IAlertModal {
   },
   action?: {
     reset: () => void,
-    dispatch: () => void,
+    dispatch: string,
   },
 }
 

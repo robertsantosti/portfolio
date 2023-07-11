@@ -30,4 +30,46 @@ export const GlobalStyle = createGlobalStyle`
     width: 100%;
     height: 100%;
   }
+  .ant-notification {
+    .ant-notification-topRight {
+      right: 19rem;
+      top: 5rem;
+    }
+  }
+
+  .ant-notification-notice {
+    &.notification {
+      margin: 0;
+
+      &.success {
+        background-color: #065806;
+
+        .ant-notification-notice-content {
+          .ant-notification-notice-message {
+            color: #fff;
+            margin: 0;
+          }
+        }
+      }
+      
+      .ant-notification-notice-content {
+        display: flex;
+        align-items: center;
+
+        .ant-notification-notice-message {
+          margin: 0;
+          padding: 0;
+          font-size: .75rem;
+
+          display: flex;
+          align-content: center;
+          justify-content: center;
+      }
+
+      .ant-notification-notice-close {
+        display: none;
+      }
+    }
+  }
+}
 `

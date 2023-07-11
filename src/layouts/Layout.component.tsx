@@ -1,19 +1,19 @@
 import { Outlet } from 'react-router-dom';
-import * as Styled from './Layout.style'
 
 import { FooterComponent } from '../components/Footer/Footer.component';
 import { HeaderComponent } from '../components/Header/Header.component';
+import * as Styled from './Layout.style';
 
 export const Layout = () => {
   return(
     <Styled.Layout>
-      <HeaderComponent/>
+        <HeaderComponent/>
 
-      <main>
-          <Outlet/>
-      </main>
+        <main>
+            <Outlet/>
+        </main>
 
-      <FooterComponent/>
+        <FooterComponent/>
     </Styled.Layout>
   )
 }
