@@ -7,6 +7,10 @@ export interface IError {
   code?: string,
 }
 
+export interface IErrorPageProps {
+  isMaintence?: boolean,
+}
+
 export interface IErrorContext {
   error: IError | null;
   setError: React.Dispatch<React.SetStateAction<IError>>;

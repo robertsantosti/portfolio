@@ -2,6 +2,11 @@ import styled from "styled-components";
 import { COLORS } from "../../utils/styles/style";
 
 export const Button = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
   font-weight: 700;
   
   color: ${COLORS.$white};
@@ -21,4 +26,15 @@ export const Button = styled.button`
     color: ${ COLORS.$primary };
     background-color: ${ COLORS.$white };
   }
+
+  .icon {
+    font-size: 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
 `

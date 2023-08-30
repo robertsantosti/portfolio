@@ -10,6 +10,6 @@ describe('ButtonComponent Tests', () => {
   })
 
   it('Shoud be able to render ButtonComponent', () => {
-    expect(screen.getByTestId('button-component'));
+    expect(screen.getByTestId('button-component')).toBeInTheDocument();
   })
 })

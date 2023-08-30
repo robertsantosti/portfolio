@@ -6,6 +6,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    outline: 0;
     font-family: 'Poppins', sans-serif;
   }
 
@@ -26,19 +27,49 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   #root {
-    max-width: 1280px;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-
-    main {
-      height: 100%;
-
-      display: flex;
-      place-content: center;
-      place-items: center;
-
-      padding: 2rem;
+    height: 100%;
+  }
+  .ant-notification {
+    .ant-notification-topRight {
+      right: 19rem;
+      top: 5rem;
     }
   }
+
+  .ant-notification-notice {
+    &.notification {
+      margin: 0;
+
+      &.success {
+        background-color: #065806;
+
+        .ant-notification-notice-content {
+          .ant-notification-notice-message {
+            color: #fff;
+            margin: 0;
+          }
+        }
+      }
+      
+      .ant-notification-notice-content {
+        display: flex;
+        align-items: center;
+
+        .ant-notification-notice-message {
+          margin: 0;
+          padding: 0;
+          font-size: .75rem;
+
+          display: flex;
+          align-content: center;
+          justify-content: center;
+      }
+
+      .ant-notification-notice-close {
+        display: none;
+      }
+    }
+  }
+}
 `
